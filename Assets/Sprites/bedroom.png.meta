@@ -53,6 +53,9 @@ TextureImporter:
   - first:
       213: -1586125053060438811
     second: bedroom
+  - first:
+      213: -5768650751410032934
+    second: tape
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -283,6 +286,27 @@ TextureImporter:
       bones: []
       spriteID: 5e42cfafaa3fcf9e0800000000000000
       internalID: -1586125053060438811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tape
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 131
+        width: 66
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade2ae884b2a1ffa0800000000000000
+      internalID: -5768650751410032934
       vertices: []
       indices: 
       edges: []
