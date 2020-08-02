@@ -18,6 +18,7 @@ public class PlayerTapeHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Rewinder")
         {
+            GameManager.Instance.GetTapeManager().CollectTape();
             Destroy(_tapeOnHand);
             _tapeOnHand = null;
         }
