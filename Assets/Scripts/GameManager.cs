@@ -5,10 +5,16 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
 
     private TapeManager _tapeManager;
+    private TimerManager _timerManager;
 
     public TapeManager GetTapeManager()
     {
         return _tapeManager;
+    }
+
+    public TimerManager GetTimerManager()
+    {
+        return _timerManager;
     }
 
     private void Awake()
@@ -26,6 +32,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _tapeManager = GetComponent<TapeManager>();
+        _timerManager = GetComponent<TimerManager>();
 
         InitGame();
     }
@@ -33,5 +40,7 @@ public class GameManager : MonoBehaviour
     private void InitGame()
     {
         _tapeManager.LoadTapes();
+        _timerManager.ResetTime();
+        _timerManager.StartTime();
     }
 }

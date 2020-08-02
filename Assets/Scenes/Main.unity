@@ -1188,6 +1188,7 @@ GameObject:
   - component: {fileID: 1578419614}
   - component: {fileID: 1578419616}
   - component: {fileID: 1578419615}
+  - component: {fileID: 1578419617}
   m_Layer: 5
   m_Name: TimerText
   m_TagString: Untagged
@@ -1333,6 +1334,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578419613}
   m_CullTransparentMesh: 0
+--- !u!114 &1578419617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578419613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54465f01f2e6f433da2fa282bf30bbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1765513954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1832,6 +1845,7 @@ GameObject:
   - component: {fileID: 2005553457}
   - component: {fileID: 2005553456}
   - component: {fileID: 2005553455}
+  - component: {fileID: 2005553458}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1877,6 +1891,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2005553458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005553454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 858d96392687d604f99db5ccfcf74e75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimePerLevel: 30
 --- !u!1001 &5137021065324624405
 PrefabInstance:
   m_ObjectHideFlags: 0
