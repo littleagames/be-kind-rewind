@@ -28,13 +28,13 @@ TextureImporter:
     second: bedroom_3
   - first:
       213: 3409529700742947499
-    second: bedroom_7
+    second: tape-glow
   - first:
       213: 7772777898857421679
     second: bedroom_4
   - first:
       213: 7781839871900867135
-    second: bedroom_6
+    second: rewinder-glow
   - first:
       213: -4197767718690361482
     second: bedroom_9
@@ -299,7 +299,7 @@ TextureImporter:
         width: 66
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,6 +307,48 @@ TextureImporter:
       bones: []
       spriteID: ade2ae884b2a1ffa0800000000000000
       internalID: -5768650751410032934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rewinder-glow
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 46
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a5f9f2226aefb60800000000000000
+      internalID: 7781839871900867135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tape-glow
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 137
+        width: 76
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba26de7c235115f20800000000000000
+      internalID: 3409529700742947499
       vertices: []
       indices: 
       edges: []
