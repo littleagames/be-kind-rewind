@@ -1,10 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
+public enum CollectTapesState
+{
+    None,
+    FindTapes,
+    ReturnToRewinder
+}
+
 public class TapeManager : MonoBehaviour
 {
     private int _tapesRemaining;
     public event Action<int> OnTapesRemainingChanged;
+    public event Action<CollectTapesState> OnTapeStateChanged;
+
+    private CollectTapesState _collectTapesState = CollectTapesState.None;
 
     public void LoadTapes()
     {
@@ -15,6 +25,8 @@ public class TapeManager : MonoBehaviour
             _tapesRemaining = tapes.Length;
             OnTapesRemainingChanged?.Invoke(_tapesRemaining);
         }
+
+        SetCollectTapeState(CollectTapesState.FindTapes);
     }
 
     public int GetTapesRemaining()
@@ -27,5 +39,12 @@ public class TapeManager : MonoBehaviour
         Debug.Log("TapeManager.CollectTape");
         _tapesRemaining--;
         OnTapesRemainingChanged?.Invoke(_tapesRemaining);
+        SetCollectTapeState(CollectTapesState.FindTapes);
+    }
+
+    public void SetCollectTapeState(CollectTapesState state)
+    {
+        _collectTapesState = state;
+        OnTapeStateChanged?.Invoke(state);
     }
 }

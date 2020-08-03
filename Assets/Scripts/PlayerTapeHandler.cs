@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerTapeHandler : MonoBehaviour
 {
@@ -30,10 +28,9 @@ public class PlayerTapeHandler : MonoBehaviour
         {
             return;
         }
-        else
-        {
-            tapeObject.transform.parent = transform;
-            _tapeOnHand = tapeObject;
-        }
+
+        tapeObject.transform.parent = transform;
+        _tapeOnHand = tapeObject;
+        GameManager.Instance.GetTapeManager().SetCollectTapeState(CollectTapesState.ReturnToRewinder);
     }
 }

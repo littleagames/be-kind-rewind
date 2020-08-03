@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
         _tapeManager = GetComponent<TapeManager>();
         _timerManager = GetComponent<TimerManager>();
 
+    }
+
+    private void Start()
+    {
         InitGame();
     }
 

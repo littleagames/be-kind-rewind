@@ -14,7 +14,7 @@ public class TimerText : MonoBehaviour
 
     private void OnTimeRemainingChanged(float timeRemaining)
     {
-        Debug.Log("TimerText.OnTimeRemainingChanged");
+        //Debug.Log("TimerText.OnTimeRemainingChanged");
         SetTimeText(timeRemaining);
     }
 
