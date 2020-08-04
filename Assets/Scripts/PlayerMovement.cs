@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 { 
     public float MovementSpeed = 20f;
     public float DiagonalLimiter = 0.7f;
+    public float NoMovementTolerance = 0.01f;
 
     private Rigidbody2D _rigidbody2d;
 
@@ -32,7 +34,20 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if (_horizMovement != 0f && _vertMovement != 0f) // Check for diagonal movement
+        var gameState = GameManager.Instance.GetGameState();
+        if (Math.Abs(_horizMovement) >= NoMovementTolerance && Math.Abs(_vertMovement) >= NoMovementTolerance
+            && gameState == GameState.WaitingToStart || gameState == GameState.Paused)
+        {
+            GameManager.Instance.SetGameState(GameState.InGame);
+        }
+
+        if (!GameManager.Instance.IsInGame())
+        {
+            return;
+        }
+
+        if (Math.Abs(_horizMovement) >= NoMovementTolerance
+            && Math.Abs(_vertMovement) <= NoMovementTolerance) // Check for diagonal movement
         {
             // limit movement speed diagonally, so you move at 70% speed
             _horizMovement *= DiagonalLimiter;

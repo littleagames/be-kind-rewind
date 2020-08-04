@@ -21,8 +21,8 @@ public class TimerText : MonoBehaviour
     private void SetTimeText(float timeRemaining)
     {
         var timerText = GetComponent<TMPro.TMP_Text>();
-        var minutes = timeRemaining / 60;
-        var seconds = timeRemaining % 60;
+        var minutes = (int)timeRemaining / 60;
+        var seconds = (int)timeRemaining % 60;
         timerText.SetText($"{minutes:00}:{seconds:00}");
     }
 }

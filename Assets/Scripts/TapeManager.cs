@@ -20,10 +20,13 @@ public class TapeManager : MonoBehaviour
     {
         Debug.Log("TapeManager.LoadTapes");
         var tapes = GameObject.FindGameObjectsWithTag("Tape");
-        if (tapes != null && tapes.Length > 0)
+        if (tapes != null)
         {
-            _tapesRemaining = tapes.Length;
-            OnTapesRemainingChanged?.Invoke(_tapesRemaining);
+            if (tapes.Length > 0)
+            {
+                _tapesRemaining = tapes.Length;
+                OnTapesRemainingChanged?.Invoke(_tapesRemaining);
+            }
         }
 
         SetCollectTapeState(CollectTapesState.FindTapes);
@@ -39,6 +42,15 @@ public class TapeManager : MonoBehaviour
         Debug.Log("TapeManager.CollectTape");
         _tapesRemaining--;
         OnTapesRemainingChanged?.Invoke(_tapesRemaining);
+
+        if (_tapesRemaining <= 0)
+        {
+            _tapesRemaining = 0;
+            SetCollectTapeState(CollectTapesState.None);
+            GameManager.Instance.SetGameState(GameState.LevelCompleted);
+            return;
+        }
+
         SetCollectTapeState(CollectTapesState.FindTapes);
     }
 

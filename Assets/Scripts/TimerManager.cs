@@ -28,6 +28,12 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var gameManager = GameManager.Instance;
+        if (!gameManager.IsInGame())
+        {
+            return;
+        }
+
         if (_timeStarted && _timeRemaining > 0)
         {
             _timeRemaining -= Time.deltaTime;
@@ -37,6 +43,7 @@ public class TimerManager : MonoBehaviour
         {
             _timeStarted = false;
             _timeRemaining = 0f;
+            gameManager.SetGameState(GameState.GameOver);
         }
     }
 }

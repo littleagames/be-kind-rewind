@@ -14,7 +14,7 @@ public class PlayerTapeHandler : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Rewinder")
+        if (_tapeOnHand != null && other.gameObject.tag == "Rewinder")
         {
             GameManager.Instance.GetTapeManager().CollectTape();
             Destroy(_tapeOnHand);
