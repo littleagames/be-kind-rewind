@@ -12,6 +12,12 @@ public class TimerText : MonoBehaviour
         SetTimeText(timerManager.GetTimeRemaining());
     }
 
+    private void OnDestroy()
+    {
+        var timerManager = GameManager.Instance.GetTimerManager();
+        timerManager.OnTimeRemainingChanged -= OnTimeRemainingChanged;
+    }
+
     private void OnTimeRemainingChanged(float timeRemaining)
     {
         //Debug.Log("TimerText.OnTimeRemainingChanged");

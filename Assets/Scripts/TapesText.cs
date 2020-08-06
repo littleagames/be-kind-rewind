@@ -11,6 +11,12 @@ public class TapesText : MonoBehaviour
         SetTapeCountText(tapeManager.GetTapesRemaining());
     }
 
+    void OnDestroy()
+    {
+        var tapeManager = GameManager.Instance.GetTapeManager();
+        tapeManager.OnTapesRemainingChanged -= OnTapeRemainingChanged;
+    }
+
     private void OnTapeRemainingChanged(int tapesRemaining)
     {
         Debug.Log("TapesText.OnTapeRemainingChanged");

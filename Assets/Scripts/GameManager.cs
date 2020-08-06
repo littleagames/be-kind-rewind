@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -46,6 +47,12 @@ public class GameManager : MonoBehaviour
         OnStateChange?.Invoke(gameState);
     }
 
+    public void ResetGame()
+    {
+        SceneManager.LoadScene("Main");
+        //InitGame();
+    }
+
     private void Awake()
     {
         Debug.Log("GameManager.Awake()");
@@ -62,16 +69,17 @@ public class GameManager : MonoBehaviour
 
         _tapeManager = GetComponent<TapeManager>();
         _timerManager = GetComponent<TimerManager>();
+        InitGame();
     }
 
     private void Start()
     {
         InitGame();
+        SetGameState(GameState.WaitingToStart);
     }
 
     private void InitGame()
     {
-        _gameState = GameState.WaitingToStart;
         _tapeManager.LoadTapes();
         _timerManager.ResetTime();
         _timerManager.StartTime();
