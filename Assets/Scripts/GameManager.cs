@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         _tapeManager = GetComponent<TapeManager>();
         _timerManager = GetComponent<TimerManager>();
